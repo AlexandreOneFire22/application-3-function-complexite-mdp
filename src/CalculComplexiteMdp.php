@@ -30,24 +30,26 @@ function CalculComplexiteMdp($mdp) :int{
     $nbCaractèrePossible = 0;
 
     if ($numeroPresent ?? false){
-        echo "NUMERO";
+        echo "Des numéros sont présents dans le mot de passse \n";
         $nbCaractèrePossible += 10;
     }
 
     if ($minusculePresent ?? false){
-        echo "MINUSCULE";
+        echo "Des minuscules sont présents dans le mot de passse \n";
         $nbCaractèrePossible += 26;
     }
 
     if ($majusculePresent ?? false){
-        echo "MAJUSCULE";
+        echo "Des majuscules sont présents dans le mot de passse \n";
         $nbCaractèrePossible += 26;
     }
 
     if ($caractereSpeciauxPresent ?? false){
-        echo "CARACTERE SPECIAUX";
+        echo "Des caractères spéciaux sont présents dans le mot de passse \n";
         $nbCaractèrePossible += 23;
     }
+
+    echo PHP_EOL;
 
     return strlen($mdp)*log($nbCaractèrePossible,2);
 
